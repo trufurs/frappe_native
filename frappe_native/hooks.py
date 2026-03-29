@@ -11,7 +11,7 @@ required_apps = ["frappe"]
 add_to_apps_screen = [
 	{
 		"name": "frappe_native",
-		"logo": "/assets/frappe_native/images/logo.svg",
+		"logo": "/assets/frappe_native/images/logo.png",
 		"title": "Frappe Native",
 		"route": "/app/pwa-settings",
 		"has_permission": "frappe_native.api.manifest.has_app_permission",
@@ -22,11 +22,15 @@ add_to_apps_screen = [
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_js = "/assets/frappe_native/js/frappe_native.js"
+app_include_js = [
+	"/assets/frappe_native/js/frappe_native.js",
+	"/assets/frappe_native/js/offline_sync.js",
+]
 app_include_css = "/assets/frappe_native/css/frappe_native.css"
 
 # include js, css files in header of web template
 web_include_js = "/assets/frappe_native/js/frappe_native.js"
+web_include_css = "/assets/frappe_native/css/frappe_native.css"
 
 # Inject manifest link + PWA meta into website pages
 update_website_context = ["frappe_native.api.manifest.update_website_context"]
@@ -53,6 +57,12 @@ doc_events = {
 # ---------------
 
 scheduler_events = {
+	"cron": {
+		# Periodic offline data sync push (every 30 minutes)
+		"0/30 * * * *": [
+			"frappe_native.api.offline.periodic_sync_cleanup",
+		],
+	},
 	"daily_maintenance": [
 		"frappe_native.api.push.cleanup_stale_subscriptions",
 	],

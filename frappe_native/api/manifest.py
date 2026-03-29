@@ -30,6 +30,20 @@ def get_manifest():
 		"theme_color": settings.theme_color or "#0089FF",
 		"background_color": settings.background_color or "#FFFFFF",
 		"icons": _build_icons_array(settings),
+		"shortcuts": [
+			{
+				"name": "Dashboard",
+				"short_name": "Dashboard",
+				"description": "Open Frappe Dashboard",
+				"url": "/app",
+			},
+			{
+				"name": "Search",
+				"short_name": "Search",
+				"description": "Global Search",
+				"url": "/app/search",
+			}
+		],
 		"categories": ["business", "productivity"],
 		"prefer_related_applications": False,
 	}

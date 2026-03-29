@@ -18,6 +18,19 @@ Transform any Frappe/ERPNext site into a **true installable web app** with offli
 | 🎨 **Dynamic Manifest** | Configure app name, icons, colors, and display mode from Frappe desk |
 | 🌙 **Dark Mode** | All UI components respect Frappe's dark theme |
 
+## 📚 Documentation
+
+A complete walk-through of the codebase architecture and setup is available in the Wiki:
+
+👉 **[Frappe Native Documentation Wiki](docs/Home.md)**
+
+Inside the docs, you'll find guides on:
+- [PWA Settings Configuration](docs/Configuration.md)
+- [Service Worker v2 Advanced Caching](docs/Service-Worker.md)
+- [Offline Sync & Conflict Resolution](docs/Offline-Sync.md)
+- [Web Push Notifications](docs/Push-Notifications.md)
+- [Android TWA Packaging (Google Play Store)](docs/Android-Packaging.md)
+
 ## 📦 Installation
 
 ```bash
