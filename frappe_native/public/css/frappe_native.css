@@ -1,0 +1,247 @@
+/*
+ * Frappe Native — Styles
+ *
+ * Install banner, offline indicator, update notification,
+ * and sync status UI components.
+ */
+
+/* ─── INSTALL BANNER ──────────────────────────────────────────────── */
+
+#frappe-native-install-banner {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	padding: 1rem;
+	transform: translateY(100%);
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	pointer-events: none;
+}
+
+#frappe-native-install-banner.fn-visible {
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.fn-install-banner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 1rem 1.25rem;
+	background: var(--fg-color, #fff);
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 16px;
+	box-shadow:
+		0 20px 60px rgba(0, 0, 0, 0.1),
+		0 8px 20px rgba(0, 0, 0, 0.06);
+	backdrop-filter: blur(20px);
+}
+
+[data-theme="dark"] .fn-install-banner {
+	background: rgba(30, 32, 48, 0.95);
+	border-color: rgba(255, 255, 255, 0.08);
+	box-shadow:
+		0 20px 60px rgba(0, 0, 0, 0.4),
+		0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fn-install-content {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex: 1;
+	min-width: 0;
+}
+
+.fn-install-icon {
+	flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #6366f1, #8b5cf6);
+	border-radius: 10px;
+	color: white;
+}
+
+.fn-install-icon svg {
+	width: 20px;
+	height: 20px;
+}
+
+.fn-install-text {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.fn-install-text strong {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--heading-color, #1e293b);
+	line-height: 1.3;
+}
+
+.fn-install-text span {
+	font-size: 0.8rem;
+	color: var(--text-muted, #64748b);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.fn-install-actions {
+	display: flex;
+	gap: 0.5rem;
+	flex-shrink: 0;
+}
+
+.fn-install-btn {
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 8px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	white-space: nowrap;
+}
+
+.fn-install-btn-primary {
+	background: linear-gradient(135deg, #6366f1, #8b5cf6);
+	color: white;
+	box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.fn-install-btn-primary:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.fn-install-btn-dismiss {
+	background: transparent;
+	color: var(--text-muted, #64748b);
+}
+
+.fn-install-btn-dismiss:hover {
+	background: var(--bg-color, #f1f5f9);
+	color: var(--text-color, #334155);
+}
+
+/* ─── UPDATE BANNER ───────────────────────────────────────────────── */
+
+#frappe-native-update-banner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10001;
+	transform: translateY(-100%);
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	pointer-events: none;
+}
+
+#frappe-native-update-banner.fn-visible {
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.fn-update-banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: 0.75rem 1rem;
+	background: linear-gradient(135deg, #6366f1, #8b5cf6);
+	color: white;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+.fn-update-banner .fn-install-btn-primary {
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(10px);
+	padding: 0.35rem 0.75rem;
+	font-size: 0.8rem;
+}
+
+.fn-update-banner .fn-install-btn-primary:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── OFFLINE STATUS INDICATOR ────────────────────────────────────── */
+
+.fn-status-indicator {
+	position: fixed;
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%) translateY(150%);
+	z-index: 10000;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.625rem 1.25rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 500;
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	pointer-events: none;
+}
+
+.fn-status-indicator.fn-visible {
+	transform: translateX(-50%) translateY(0);
+	pointer-events: auto;
+}
+
+.fn-status-offline {
+	background: rgba(239, 68, 68, 0.1);
+	border: 1px solid rgba(239, 68, 68, 0.2);
+	color: #fca5a5;
+	backdrop-filter: blur(20px);
+}
+
+[data-theme="light"] .fn-status-offline {
+	background: rgba(239, 68, 68, 0.08);
+	color: #dc2626;
+}
+
+.fn-status-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #ef4444;
+	animation: fn-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes fn-blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+	.fn-install-banner {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.fn-install-actions {
+		justify-content: flex-end;
+	}
+
+	.fn-install-text span {
+		white-space: normal;
+	}
+}

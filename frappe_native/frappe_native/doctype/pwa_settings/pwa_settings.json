@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-03-29 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pwa_section",
+  "enable_pwa",
+  "app_name",
+  "short_name",
+  "description",
+  "column_break_1",
+  "start_url",
+  "display",
+  "orientation",
+  "appearance_section",
+  "theme_color",
+  "background_color",
+  "column_break_2",
+  "app_icon_192",
+  "app_icon_512",
+  "push_notification_section",
+  "enable_push_notifications",
+  "vapid_public_key",
+  "column_break_3",
+  "vapid_private_key",
+  "generate_vapid_keys_btn",
+  "offline_section",
+  "enable_offline_mode",
+  "offline_doctypes"
+ ],
+ "fields": [
+  {
+   "fieldname": "pwa_section",
+   "fieldtype": "Section Break",
+   "label": "Progressive Web App"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_pwa",
+   "fieldtype": "Check",
+   "label": "Enable PWA"
+  },
+  {
+   "fieldname": "app_name",
+   "fieldtype": "Data",
+   "label": "App Name",
+   "reqd": 1,
+   "description": "Full name shown in the install prompt and app launcher"
+  },
+  {
+   "fieldname": "short_name",
+   "fieldtype": "Data",
+   "label": "Short Name",
+   "length": 12,
+   "description": "Shown below the app icon on the home screen (max 12 chars)"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "/app",
+   "fieldname": "start_url",
+   "fieldtype": "Data",
+   "label": "Start URL",
+   "description": "URL opened when the installed app is launched"
+  },
+  {
+   "default": "standalone",
+   "fieldname": "display",
+   "fieldtype": "Select",
+   "label": "Display Mode",
+   "options": "standalone\nfullscreen\nminimal-ui\nbrowser"
+  },
+  {
+   "default": "any",
+   "fieldname": "orientation",
+   "fieldtype": "Select",
+   "label": "Orientation",
+   "options": "any\nportrait\nlandscape"
+  },
+  {
+   "fieldname": "appearance_section",
+   "fieldtype": "Section Break",
+   "label": "Appearance"
+  },
+  {
+   "default": "#0089FF",
+   "fieldname": "theme_color",
+   "fieldtype": "Color",
+   "label": "Theme Color",
+   "description": "Browser toolbar and task switcher color"
+  },
+  {
+   "default": "#FFFFFF",
+   "fieldname": "background_color",
+   "fieldtype": "Color",
+   "label": "Background Color",
+   "description": "Splash screen background while the app loads"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "app_icon_192",
+   "fieldtype": "Attach Image",
+   "label": "App Icon (192×192)",
+   "description": "PNG icon used on mobile home screens. Must be 192×192 pixels."
+  },
+  {
+   "fieldname": "app_icon_512",
+   "fieldtype": "Attach Image",
+   "label": "App Icon (512×512)",
+   "description": "PNG icon used for splash screen. Must be 512×512 pixels."
+  },
+  {
+   "fieldname": "push_notification_section",
+   "fieldtype": "Section Break",
+   "label": "Push Notifications",
+   "collapsible": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_push_notifications",
+   "fieldtype": "Check",
+   "label": "Enable Push Notifications",
+   "description": "Send real-time push notifications to users even when the browser is closed"
+  },
+  {
+   "fieldname": "vapid_public_key",
+   "fieldtype": "Code",
+   "label": "VAPID Public Key",
+   "read_only": 1,
+   "options": "Text",
+   "description": "Auto-generated. Used by the browser to validate push messages."
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vapid_private_key",
+   "fieldtype": "Password",
+   "label": "VAPID Private Key",
+   "hidden": 1,
+   "description": "Auto-generated. Used by the server to sign push messages. Keep secret."
+  },
+  {
+   "fieldname": "generate_vapid_keys_btn",
+   "fieldtype": "Button",
+   "label": "Generate VAPID Keys",
+   "description": "Click to generate new VAPID key pair for push notifications"
+  },
+  {
+   "fieldname": "offline_section",
+   "fieldtype": "Section Break",
+   "label": "Offline Mode",
+   "collapsible": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_offline_mode",
+   "fieldtype": "Check",
+   "label": "Enable Offline Mode",
+   "description": "Allow users to view and create documents while offline"
+  },
+  {
+   "fieldname": "offline_doctypes",
+   "fieldtype": "Table",
+   "label": "Offline DocTypes",
+   "options": "Offline DocType Config",
+   "description": "Select which DocTypes should be available offline",
+   "depends_on": "eval:doc.enable_offline_mode"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-03-29 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Frappe Native",
+ "name": "PWA Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
