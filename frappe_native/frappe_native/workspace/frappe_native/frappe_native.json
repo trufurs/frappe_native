@@ -1,0 +1,85 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"hero\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Frappe Native</b></span>\",\"col\":12,\"level\":4}},{\"id\":\"subtitle\",\"type\":\"paragraph\",\"data\":{\"text\":\"Turn your Frappe site into an installable offline-first Progressive Web App\",\"col\":12}},{\"id\":\"cards_section\",\"type\":\"header\",\"data\":{\"text\":\"Quick Setup\",\"col\":12,\"level\":5}},{\"id\":\"pwa_settings_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PWA Settings\",\"col\":4}},{\"id\":\"push_subscriptions_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Push Subscriptions\",\"col\":4}},{\"id\":\"offline_page_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Test Offline Page\",\"col\":4}},{\"id\":\"stats_section\",\"type\":\"header\",\"data\":{\"text\":\"Statistics\",\"col\":12,\"level\":5}},{\"id\":\"push_count\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Push Subscriptions\",\"col\":4}},{\"id\":\"docs_section\",\"type\":\"header\",\"data\":{\"text\":\"Documentation\",\"col\":12,\"level\":5}},{\"id\":\"docs\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Getting Started:</b><br>1. Configure your app in <a href=\\\"/app/pwa-settings\\\">PWA Settings</a><br>2. Upload 192×192 and 512×512 PNG icons<br>3. Enable Push Notifications and generate VAPID keys<br>4. Visit your site in Chrome — you should see the \\\"Install\\\" option<br><br><b>Requirements:</b> HTTPS is required for Service Workers and Push Notifications.\",\"col\":12}}]",
+ "creation": "2026-03-29 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "mobile",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Frappe Native",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "PWA Settings",
+   "link_count": 0,
+   "link_to": "PWA Settings",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Push Subscription",
+   "link_count": 0,
+   "link_to": "Push Subscription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-03-29 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Frappe Native",
+ "name": "Frappe Native",
+ "number_cards": [
+  {
+   "color": "Purple",
+   "label": "Active Push Subscriptions",
+   "number_card_name": "Active Push Subscriptions"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 30,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "PWA Settings",
+   "link_to": "PWA Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "Push Subscriptions",
+   "link_to": "Push Subscription",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "label": "Test Offline Page",
+   "link_to": "/offline",
+   "type": "URL"
+  }
+ ],
+ "title": "Frappe Native"
+}
